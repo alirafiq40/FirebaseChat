@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D15F336D1EED4CA30058C100 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15F336C1EED4CA30058C100 /* Constants.swift */; };
-		D18327531EED794F004AA234 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D18327521EED794F004AA234 /* GoogleService-Info.plist */; };
 		D1FFD9711EED425500AC3205 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FFD9701EED425500AC3205 /* AppDelegate.swift */; };
 		D1FFD9731EED425500AC3205 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FFD9721EED425500AC3205 /* ChatViewController.swift */; };
 		D1FFD9761EED425500AC3205 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1FFD9741EED425500AC3205 /* Main.storyboard */; };
@@ -22,7 +21,6 @@
 		4D69DFC20470F8678B4E9A9A /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		D15B97901EED473300C87772 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		D15F336C1EED4CA30058C100 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		D18327521EED794F004AA234 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D1FFD96D1EED425500AC3205 /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1FFD9701EED425500AC3205 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1FFD9721EED425500AC3205 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 		D1FFD96F1EED425500AC3205 /* ChatApp */ = {
 			isa = PBXGroup;
 			children = (
-				D18327521EED794F004AA234 /* GoogleService-Info.plist */,
 				D15F336C1EED4CA30058C100 /* Constants.swift */,
 				D1FFD9701EED425500AC3205 /* AppDelegate.swift */,
 				D1FFD9721EED425500AC3205 /* ChatViewController.swift */,
@@ -158,7 +155,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1FFD97B1EED425500AC3205 /* LaunchScreen.storyboard in Resources */,
-				D18327531EED794F004AA234 /* GoogleService-Info.plist in Resources */,
 				D1FFD9781EED425500AC3205 /* Assets.xcassets in Resources */,
 				D1FFD9761EED425500AC3205 /* Main.storyboard in Resources */,
 			);
@@ -173,13 +169,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChatApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5AB769C1FCA21AC1902D24D7 /* [CP] Copy Pods Resources */ = {
@@ -203,9 +202,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
